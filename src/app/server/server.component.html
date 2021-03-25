@@ -1,0 +1,6 @@
+<!-- string interpolation - any expression that results in string - can be method, no multiline - - from ts to html-->
+<!-- if there is a - then add '' else can be through camel case -->
+<!-- here it is an attribute directive as it changes the element unlike structural -->
+<!-- ngStyle allows to add css styles, ngClass allows to add css class -->
+<p [ngStyle]="{backgroundColor : getColor()}" [ngClass]="{online : serverStatus === 'online'}">{{ 'Server' }} with ID
+    {{ serverId }} is {{ getServerStatus() }}</p>

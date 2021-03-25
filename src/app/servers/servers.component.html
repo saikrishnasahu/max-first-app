@@ -1,0 +1,21 @@
+<label>Server Name</label>
+<!-- $event is reserved to what is being passed with the event - the data  - not two way binding-->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+<!-- using two way data binding -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- <p>{{ serverName }}</p> -->
+<!-- property binding - binding to a value - from ts to html-->
+<!-- event binding with () -->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onButtonClick()">Add Server</button>
+<!-- <p>{{allowNewServer}}</p> -->
+<!-- similar to above but can be used this way as weel -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<!-- ngIf is a directive * to indicate that it is a structural directive as it dynamically adds or removes element in DOM-->
+<!-- <p *ngIf="serverCreated; else noServer">{{ 'Server Created! Name is ' + serverName }}</p> -->
+<!-- <ng-template #noServer>
+    <p>No Server was created!</p>
+</ng-template> -->
+
+<p *ngIf="serverCreated">{{ 'Server Created! Name is ' + serverName }}</p>
+<app-server *ngFor = "let server of servers"></app-server>
